@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Функции encodeURIComponent и decodeURIComponent</title>
+  <script>
+
+    window.onload = function () {
+        // ф-ция для выборки элемента;
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        $("encodeBtn").onclick = function () {
+            // URL кодирование данных
+            var res = encodeURIComponent($("forEncode").value);
+            $("encodedOutput").innerHTML = res;
+        }
+
+        $("decodeBtn").onclick = function () {
+            // URL декодирование данных
+            var res = decodeURIComponent($("forDecode").value);
+            $("decodedOutput").innerHTML = res;
+        }
+    }
+
+  </script>
+</head>
+<body>
+  Текст для кодирования 
+  <input id="forEncode" />
+  <button id="encodeBtn" type="button">Кодировать</button>
+  <p id="encodedOutput"></p>
+
+  Текст для декодирования <input id="forDecode" /><input id="decodeBtn" type="button" value="Декодировать" />
+  <p id="decodedOutput"></p>
+</body>
+</html>
